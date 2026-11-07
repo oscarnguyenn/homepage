@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Oscar Nguyen — Developer</title>
+<meta name="description" content="Oscar Nguyen is a developer building useful software with TypeScript and Python.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#fff;--surface:#fafaf9;--hover:#f4f4f2;--border:#e8e8e5;--border-strong:#d6d6d2;--fg:#1f1f1e;--muted:#6b6b67;--primary:#2a52d9;--primary-hover:#2144b8;--on-primary:#fff;--dot:#d6d6d2;
+--sans:"Geist",ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;--mono:"Geist Mono",ui-monospace,Menlo,monospace;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:light}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#121211;--surface:#191918;--hover:#222220;--border:#2b2b29;--border-strong:#3a3a37;--fg:#ecece9;--muted:#9b9b95;--primary:#7b97f0;--primary-hover:#98aef4;--on-primary:#0d1020;--dot:#34342f;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#121211;--surface:#191918;--hover:#222220;--border:#2b2b29;--border-strong:#3a3a37;--fg:#ecece9;--muted:#9b9b95;--primary:#7b97f0;--primary-hover:#98aef4;--on-primary:#0d1020;--dot:#34342f;color-scheme:dark}
+*{box-sizing:border-box}
+html{scroll-padding-top:env(safe-area-inset-top,0px);-webkit-font-smoothing:antialiased}
+html.lenis,html.lenis body{height:auto}.lenis.lenis-smooth{scroll-behavior:auto!important}
+body{margin:0;background:var(--bg);color:var(--fg);font:400 16px/1.6 var(--sans)}
+a{color:inherit;text-decoration:none}
+#bg{position:fixed;inset:0;width:100%;height:100%;z-index:0;pointer-events:none;-webkit-mask-image:linear-gradient(#000 0,#000 55%,transparent 100%);mask-image:linear-gradient(#000 0,#000 55%,transparent 100%)}
+.wrap{position:relative;z-index:1;max-width:760px;margin:0 auto;padding:0 24px}
+header{display:flex;align-items:center;justify-content:space-between;height:64px}
+.brand{font-weight:600;letter-spacing:-.01em;display:flex;align-items:center;gap:10px}
+.dot{width:20px;height:20px;border-radius:6px;background:var(--primary)}
+nav{display:flex;align-items:center;gap:20px;font-size:14px;color:var(--muted)}
+nav a:hover{color:var(--fg)}
+button{font:inherit;cursor:pointer}
+button.theme{font-size:13px;background:none;border:1px solid var(--border);color:var(--muted);border-radius:6px;height:28px;padding:0 10px}
+button.theme:hover{background:var(--hover);color:var(--fg)}
+.hero{padding:110px 0 80px}
+.eyebrow{font:500 13px var(--mono);color:var(--muted);margin:0 0 20px}
+h1{font-size:clamp(36px,7vw,60px);line-height:1.08;letter-spacing:-.035em;font-weight:600;margin:0 0 24px}
+.w{display:inline-block;overflow:hidden;vertical-align:top;padding-bottom:.08em}.w>span{display:inline-block}
+.lead{font-size:18px;color:var(--muted);max-width:56ch;margin:0 0 32px}
+.btns{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;height:38px;padding:0 16px;border-radius:6px;font-size:14px;font-weight:500;border:1px solid var(--border);background:var(--bg);transition:background .15s,border-color .15s}
+.btn:hover{background:var(--hover);border-color:var(--border-strong)}
+.btn.p{background:var(--primary);border-color:var(--primary);color:var(--on-primary)}.btn.p:hover{background:var(--primary-hover)}
+a:focus-visible,button:focus-visible{outline:2px solid var(--primary);outline-offset:2px}
+.marq{border-block:1px solid var(--border);overflow:hidden;background:var(--bg);position:relative;z-index:1}
+.track{display:flex;width:max-content;padding:14px 0}
+.track span{font:500 14px var(--mono);color:var(--muted);padding:0 28px;white-space:nowrap}
+.track span::after{content:"/";margin-left:56px;color:var(--border-strong)}
+section{padding:72px 0 8px}
+h2{font:500 13px var(--mono);color:var(--muted);margin:0 0 24px}
+.grid{display:grid;gap:16px}
+.card{--mx:50%;--my:50%;position:relative;display:block;background:var(--bg);border:1px solid var(--border);border-radius:10px;padding:26px;overflow:hidden;transition:border-color .15s}
+.card::before{content:"";position:absolute;inset:0;opacity:0;transition:opacity .25s;background:radial-gradient(320px circle at var(--mx) var(--my),color-mix(in srgb,var(--primary) 14%,transparent),transparent 70%)}
+.card:hover{border-color:var(--border-strong)}.card:hover::before{opacity:1}
+.card>*{position:relative}
+.card h3{margin:0 0 6px;font-size:19px;font-weight:600;letter-spacing:-.01em;display:flex;justify-content:space-between}
+.card h3 span{color:var(--muted);font-weight:400;transition:transform .2s}.card:hover h3 span{transform:translate(3px,-3px)}
+.card p{margin:0 0 18px;color:var(--muted);font-size:15px}
+.tags{display:flex;gap:8px;flex-wrap:wrap}
+.tag{font:500 12px var(--mono);padding:2px 8px;border-radius:4px;background:var(--surface);border:1px solid var(--border);color:var(--muted)}
+.contact{padding:96px 0 72px}
+.contact h2{margin-bottom:16px}
+.big{font-size:clamp(26px,5vw,40px);letter-spacing:-.03em;font-weight:600;line-height:1.15;margin:0 0 28px;word-break:break-word}
+.big a{border-bottom:2px solid var(--border-strong);transition:border-color .15s}.big a:hover{border-color:var(--primary)}
+footer{border-top:1px solid var(--border);padding:28px 0 48px;color:var(--muted);font-size:14px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+footer a:hover{color:var(--fg)}
+</style>
+</head>
+<body>
+<canvas id="bg" aria-hidden="true"></canvas>
+<div class="wrap">
+  <header>
+    <a class="brand" href="#top"><span class="dot"></span>Oscar Nguyen</a>
+    <nav><a href="#work">Work</a><a href="#contact">Contact</a><a href="https://github.com/oscarnguyenn" rel="noopener">GitHub</a><button class="theme" id="theme" type="button" aria-label="Toggle theme">Theme</button></nav>
+  </header>
+  <main id="top">
+    <div class="hero">
+      <p class="eyebrow" data-fade>developer</p>
+      <h1 id="h1">I build software that makes everyday things simpler.</h1>
+      <p class="lead" data-fade>I’m Oscar, a developer working with TypeScript and Python. Right now I’m building a personal productivity workspace that brings notes, tasks and calendar into one place.</p>
+      <div class="btns" data-fade><a class="btn p" href="#work">See my work</a><a class="btn" href="mailto:oscarnguyenv2@gmail.com">Email me</a></div>
+    </div>
+  </main>
+</div>
+<div class="marq" aria-hidden="true"><div class="track" id="track"></div></div>
+<div class="wrap">
+  <section id="work">
+    <h2 data-reveal>selected work</h2>
+    <div class="grid">
+      <a class="card" data-reveal href="https://github.com/oscarnguyenn/productivity-hub" rel="noopener">
+        <h3>Productivity Hub <span>↗</span></h3>
+        <p>An all-in-one workspace combining a rich-text editor, calendar and task tracking, with a calm, minimal interface.</p>
+        <div class="tags"><span class="tag">TypeScript</span><span class="tag">Next.js</span><span class="tag">React</span><span class="tag">Tailwind</span></div>
+      </a>
+      <a class="card" data-reveal href="https://github.com/oscarnguyenn/SMARTFIT" rel="noopener">
+        <h3>SMARTFIT <span>↗</span></h3>
+        <p>A fitness tracking app.</p>
+        <div class="tags"><span class="tag">Python</span></div>
+      </a>
+    </div>
+  </section>
+  <section class="contact" id="contact">
+    <h2 data-reveal>contact</h2>
+    <p class="big" data-reveal>Got an idea or a project?<br><a href="mailto:oscarnguyenv2@gmail.com">oscarnguyenv2@gmail.com</a></p>
+    <div class="btns" data-reveal><a class="btn" href="https://github.com/oscarnguyenn" rel="noopener">github.com/oscarnguyenn</a></div>
+  </section>
+  <footer><span>© <span id="yr">2026</span> Oscar Nguyen</span><span>Built with GSAP &amp; Lenis</span></footer>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.20/dist/lenis.min.js"></script>
+<script>
+(function(){
+var root=document.documentElement,reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+document.getElementById('yr').textContent=new Date().getFullYear();
+
+/* theme */
+try{var s=localStorage.getItem('theme');if(s)root.setAttribute('data-theme',s)}catch(e){}
+document.getElementById('theme').onclick=function(){
+  var cur=root.getAttribute('data-theme'),dark=cur?cur==='dark':matchMedia('(prefers-color-scheme: dark)').matches,n=dark?'light':'dark';
+  root.setAttribute('data-theme',n);try{localStorage.setItem('theme',n)}catch(e){}
+};
+
+/* marquee content */
+var items=['TypeScript','Python','React','Next.js','Tailwind CSS','Tiptap','shadcn/ui','GSAP','Lenis'],tr=document.getElementById('track');
+tr.innerHTML=items.concat(items).concat(items).concat(items).map(function(t){return '<span>'+t+'</span>'}).join('');
+
+/* split headline into words */
+var h1=document.getElementById('h1');
+h1.innerHTML=h1.textContent.split(' ').map(function(w){return '<span class="w"><span>'+w+'</span></span>'}).join(' ');
+
+/* spotlight cards (React Bits SpotlightCard style) */
+document.querySelectorAll('.card').forEach(function(c){
+  c.addEventListener('pointermove',function(e){var r=c.getBoundingClientRect();c.style.setProperty('--mx',(e.clientX-r.left)+'px');c.style.setProperty('--my',(e.clientY-r.top)+'px')});
+});
+
+/* reactive dot grid (React Bits DotGrid style) */
+var cv=document.getElementById('bg'),cx=cv.getContext('2d'),W,H,dpr,mx=-999,my=-999,gap=30;
+function size(){dpr=Math.min(devicePixelRatio||1,2);W=innerWidth;H=innerHeight;cv.width=W*dpr;cv.height=H*dpr;cx.setTransform(dpr,0,0,dpr,0,0)}
+size();addEventListener('resize',size);
+addEventListener('pointermove',function(e){mx=e.clientX;my=e.clientY});
+function draw(){
+  var cs=getComputedStyle(root),dot=cs.getPropertyValue('--dot').trim(),pr=cs.getPropertyValue('--primary').trim();
+  cx.clearRect(0,0,W,H);
+  for(var x=gap/2;x<W;x+=gap)for(var y=gap/2;y<H;y+=gap){
+    var d=Math.hypot(x-mx,y-my),n=Math.max(0,1-d/160);
+    cx.beginPath();cx.arc(x,y,1+n*2.4,0,6.283);cx.fillStyle=n>0.05?pr:dot;cx.globalAlpha=n>0.05?.25+n*.75:1;cx.fill();
+  }
+  cx.globalAlpha=1;
+}
+
+/* animation */
+if(window.gsap){
+  gsap.registerPlugin(ScrollTrigger);
+  if(!reduce&&window.Lenis){
+    var lenis=new Lenis({lerp:.1});
+    lenis.on('scroll',ScrollTrigger.update);
+    gsap.ticker.add(function(t){lenis.raf(t*1000)});gsap.ticker.lagSmoothing(0);
+    document.querySelectorAll('a[href^="#"]').forEach(function(a){a.addEventListener('click',function(e){var t=document.querySelector(a.getAttribute('href'));if(t){e.preventDefault();lenis.scrollTo(t,{offset:-16})}})});
+  }
+  gsap.ticker.add(draw);
+  if(!reduce){
+    gsap.from('#h1 .w>span',{yPercent:115,duration:1,ease:'power4.out',stagger:.07,delay:.1});
+    gsap.from('[data-fade]',{opacity:0,y:16,duration:.8,ease:'power3.out',stagger:.12,delay:.5});
+    gsap.utils.toArray('[data-reveal]').forEach(function(el){
+      gsap.from(el,{opacity:0,y:28,duration:.9,ease:'power3.out',scrollTrigger:{trigger:el,start:'top 88%'}});
+    });
+    gsap.to(tr,{xPercent:-25,duration:28,ease:'none',repeat:-1});
+    gsap.to('#bg',{opacity:.25,scrollTrigger:{trigger:'#work',start:'top 80%',end:'top 20%',scrub:true}});
+  }
+}else{draw()}
+})();
+</script>
+</body>
+</html>
